@@ -1,24 +1,19 @@
-def linear_search(arr, target):
-    for n in range(len(arr)):
-        if arr[n] == target:
-            return n
+# This array is already sorted:
+# [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    return -1   # not found
+# assume array 'arr' is sorted
 
 
-# Write an iterative implementation of Binary Search
 def binary_search(arr, target):
-
+    # let's figure out the total size of the arr
     # returns the index of the target if it exists in the arr
     # if it's not in the arr, othersie, retirns - 1
     left = 0
     right = len(arr) - 1
-    print("left", left, "\nright", right)
 
     while left <= right:  # our loop
         # find the midpoint
         mid = (left + right) // 2  # // = divided
-        print("\nmid", mid)
 
         # lets check to see if the midpoint element is our target
         if arr[mid] == target:
@@ -28,12 +23,11 @@ def binary_search(arr, target):
         if arr[mid] < target:
             # so were going to toss out the left side of the arr
             left = mid + 1
-            print("left", left)
             # otherwise, arr[mid] > bigger than our target
         else:
             # toss out the right side of the arr because the lement has to be on the left side
             right = mid - 1
-            print("right", right)
 
-    # we didn't find the element
+
+# we didn't find the element
     return - 1
